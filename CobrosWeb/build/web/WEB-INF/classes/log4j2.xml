@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <properties>
+        <property name="package_name_war">py.com.konecta.redcobros.cobrosweb</property>
+        <property name="package_name_ejb">py.com.konecta.redcobros.ejb</property>
+        <property name="package_name_war_gestion">py.com.konecta.redcobros.gestionweb</property>
+        
+        <property name="name_war_gestion">GestionRedCobrosWeb</property>
+        <property name="name_war">CobrosWeb</property>
+        <property name="name_ejb">RedCobros-EJB</property>
+        
+        <property name="log_dir">/var/logs</property>
+        <property name="pattern">%-5p [%d] [%t] (%M [%C:%L]) - %m%n</property>
+    </properties>
+    <CustomLevels>
+        <CustomLevel name="XML" intLevel="450" />
+    </CustomLevels>
+    <Appenders>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="${pattern}"/>
+        </Console>
+        <RollingFile name="ROLLING_FILE_WAR" fileName="${log_dir}/${name_war}.log" filePattern="${log_dir}/${name_war}-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <pattern>${pattern}</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/><!-- Rotated everyday -->
+            </Policies>
+        </RollingFile>
+        <RollingFile name="ROLLING_FILE_WAR_GESTION" fileName="${log_dir}/${name_war_gestion}.log" filePattern="${log_dir}/${name_war_gestion}-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <pattern>${pattern}</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/><!-- Rotated everyday -->
+            </Policies>
+        </RollingFile>
+        <RollingFile name="ROLLING_FILE_EJB" fileName="${log_dir}/${name_ejb}.log" filePattern="${log_dir}/${name_ejb}-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <pattern>${pattern}</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/><!-- Rotated everyday -->
+            </Policies>
+            <Filters>
+                <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="XML" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="NEUTRAL"/>
+            </Filters>
+        </RollingFile>
+        <RollingFile name="ROLLING_FILE_XML" fileName="${log_dir}/${name_ejb}-XML.log" filePattern="${log_dir}/${name_ejb}-XML-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <pattern>${pattern}</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/><!-- Rotated everyday -->
+                <SizeBasedTriggeringPolicy size="50 MB"/> <!-- Or every 50 MB -->
+            </Policies>
+            <Filters>
+                <ThresholdFilter level="INFO" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="XML" onMatch="ACCEPT" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="DEBUG" onMatch="DENY" onMismatch="NEUTRAL"/>
+            </Filters>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="CONSOLE"/>
+        </Root>
+        <Logger name="${package_name_war}" level="trace" additivity="false">
+            <AppenderRef ref="ROLLING_FILE_WAR"/>
+            <Appender-ref ref="CONSOLE" level="DEBUG"/>
+        </Logger>
+        <Logger name="${package_name_war_gestion}" level="trace" additivity="false">
+            <AppenderRef ref="ROLLING_FILE_WAR_GESTION"/>
+            <Appender-ref ref="CONSOLE" level="DEBUG"/>
+        </Logger>
+        <Logger name="${package_name_ejb}" level="trace">
+            <AppenderRef ref="ROLLING_FILE_EJB"/>
+            <AppenderRef ref="ROLLING_FILE_XML"/>
+            <Appender-ref ref="CONSOLE" level="DEBUG"/>
+        </Logger>
+    </Loggers>
+</Configuration>

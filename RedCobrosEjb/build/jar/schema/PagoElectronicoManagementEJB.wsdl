@@ -1,0 +1,163 @@
+<definitions name='PagoElectronicoManagementService' targetNamespace='http://py.gov.set.services/rucas/pagos' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://exception.rucas.set.gov.py/jaws' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://py.gov.set.services/rucas/pagos' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema elementFormDefault='qualified' targetNamespace='http://py.gov.set.services/rucas/pagos' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns1='http://exception.rucas.set.gov.py/jaws' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://py.gov.set.services/rucas/pagos' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://exception.rucas.set.gov.py/jaws'/>
+   <complexType name='RucasWsException'>
+    <complexContent>
+     <extension base='ns1:RucasException'>
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <element name='RucasWsException' type='tns:RucasWsException'/>
+  </schema>
+  <schema elementFormDefault='qualified' targetNamespace='http://exception.rucas.set.gov.py/jaws' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns2='http://py.gov.set.services/rucas/pagos' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://exception.rucas.set.gov.py/jaws' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://py.gov.set.services/rucas/pagos'/>
+   <complexType name='RucasException'>
+    <sequence>
+     <element name='message' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <element name='RucasException' type='tns:RucasException'/>
+  </schema>
+ </types>
+ <message name='PagoElectronicoManagement_guardarOTResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <message name='PagoElectronicoManagement_consultarDeudaResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <message name='RucasWsException'>
+  <part element='tns:RucasWsException' name='RucasWsException'/>
+ </message>
+ <message name='PagoElectronicoManagement_consultarDeuda'>
+  <part name='sessionId' type='xsd:string'/>
+  <part name='ruc' type='xsd:string'/>
+  <part name='fechaConstitucion' type='xsd:string'/>
+  <part name='nroBoleta' type='xsd:string'/>
+ </message>
+ <message name='PagoElectronicoManagement_consultarOTResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <message name='PagoElectronicoManagement_consultarOT'>
+  <part name='sessionId' type='xsd:string'/>
+  <part name='xmlPago' type='xsd:string'/>
+  <part name='nroHash' type='xsd:string'/>
+ </message>
+ <message name='PagoElectronicoManagement_guardarOT'>
+  <part name='sessionId' type='xsd:string'/>
+  <part name='xmlPago' type='xsd:string'/>
+  <part name='nroHash' type='xsd:string'/>
+ </message>
+ <message name='PagoElectronicoManagement_consultarPago'>
+  <part name='sessionId' type='xsd:string'/>
+  <part name='xmlPago' type='xsd:string'/>
+  <part name='nroHash' type='xsd:string'/>
+ </message>
+ <message name='PagoElectronicoManagement_guardarPago'>
+  <part name='sessionId' type='xsd:string'/>
+  <part name='xml' type='xsd:string'/>
+  <part name='nroHash' type='xsd:string'/>
+ </message>
+ <message name='PagoElectronicoManagement_consultarPagoResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <message name='PagoElectronicoManagement_guardarPagoResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <portType name='PagoElectronicoManagement'>
+  <operation name='consultarDeuda' parameterOrder='sessionId ruc fechaConstitucion nroBoleta'>
+   <input message='tns:PagoElectronicoManagement_consultarDeuda'/>
+   <output message='tns:PagoElectronicoManagement_consultarDeudaResponse'/>
+   <fault message='tns:RucasWsException' name='RucasWsException'/>
+  </operation>
+  <operation name='consultarOT' parameterOrder='sessionId xmlPago nroHash'>
+   <input message='tns:PagoElectronicoManagement_consultarOT'/>
+   <output message='tns:PagoElectronicoManagement_consultarOTResponse'/>
+   <fault message='tns:RucasWsException' name='RucasWsException'/>
+  </operation>
+  <operation name='consultarPago' parameterOrder='sessionId xmlPago nroHash'>
+   <input message='tns:PagoElectronicoManagement_consultarPago'/>
+   <output message='tns:PagoElectronicoManagement_consultarPagoResponse'/>
+   <fault message='tns:RucasWsException' name='RucasWsException'/>
+  </operation>
+  <operation name='guardarOT' parameterOrder='sessionId xmlPago nroHash'>
+   <input message='tns:PagoElectronicoManagement_guardarOT'/>
+   <output message='tns:PagoElectronicoManagement_guardarOTResponse'/>
+   <fault message='tns:RucasWsException' name='RucasWsException'/>
+  </operation>
+  <operation name='guardarPago' parameterOrder='sessionId xml nroHash'>
+   <input message='tns:PagoElectronicoManagement_guardarPago'/>
+   <output message='tns:PagoElectronicoManagement_guardarPagoResponse'/>
+   <fault message='tns:RucasWsException' name='RucasWsException'/>
+  </operation>
+ </portType>
+ <binding name='PagoElectronicoManagementBinding' type='tns:PagoElectronicoManagement'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='consultarDeuda'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://py.gov.set.services/rucas/pagos' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://py.gov.set.services/rucas/pagos' use='literal'/>
+   </output>
+   <fault name='RucasWsException'>
+    <soap:fault name='RucasWsException' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='consultarOT'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://py.gov.set.services/rucas/pagos' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://py.gov.set.services/rucas/pagos' use='literal'/>
+   </output>
+   <fault name='RucasWsException'>
+    <soap:fault name='RucasWsException' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='consultarPago'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://py.gov.set.services/rucas/pagos' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://py.gov.set.services/rucas/pagos' use='literal'/>
+   </output>
+   <fault name='RucasWsException'>
+    <soap:fault name='RucasWsException' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='guardarOT'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://py.gov.set.services/rucas/pagos' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://py.gov.set.services/rucas/pagos' use='literal'/>
+   </output>
+   <fault name='RucasWsException'>
+    <soap:fault name='RucasWsException' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='guardarPago'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://py.gov.set.services/rucas/pagos' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://py.gov.set.services/rucas/pagos' use='literal'/>
+   </output>
+   <fault name='RucasWsException'>
+    <soap:fault name='RucasWsException' use='literal'/>
+   </fault>
+  </operation>
+ </binding>
+ <service name='PagoElectronicoManagementService'>
+  <port binding='tns:PagoElectronicoManagementBinding' name='PagoElectronicoManagementPort'>
+   <soap:address location='http://fi-c.set.gov.py:8080/rucas/PagoElectronicoManagementEJB'/>
+  </port>
+ </service>
+</definitions>

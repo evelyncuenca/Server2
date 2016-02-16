@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:ejbjarproject2="http://www.netbeans.org/ns/j2ee-ejbjarproject/2" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSGEN SECTION
+                ===================
+            -->
+    <target name="wsgen-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws/resources/"/>
+        <property name="j2ee.platform.wsgen.classpath" value="${libs.jaxws21.classpath}"/>
+        <taskdef name="wsgen" classname="com.sun.tools.ws.ant.WsGen">
+            <classpath path="${j2ee.platform.wsgen.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsgen-compile" depends="wsgen-RedFacadeImpl">
+        <ejbjarproject2:javac srcdir="${build.generated.sources.dir}/jax-ws" classpath="${j2ee.platform.wsgen.classpath}:${javac.classpath}" destdir="${classes.dir}"/>
+    </target>
+    <target name="wsgen-RedFacadeImpl" depends="wsgen-init, -do-compile">
+        <wsgen destdir="${build.generated.sources.dir}/jax-ws" sourcedestdir="${build.generated.sources.dir}/jax-ws" resourcedestdir="${build.generated.sources.dir}/jax-ws/resources/" verbose="true" xendorsed="true" keep="false" genwsdl="true" sei="py.com.konecta.redcobros.ejb.impl.RedFacadeImpl">
+            <classpath path="${java.home}/../lib/tools.jar:${classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
+        </wsgen>
+    </target>
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <fail if="${wsimport.bad.version}" message="WsImport ant task defined in the classpath ${j2ee.platform.wsimport.classpath} has a serious bug. See http://wiki.netbeans.org/MetroIssue for details."/>
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <mkdir dir="${classes.dir}"/>
+        <property name="j2ee.platform.wsimport.classpath" value="${libs.jaxws21.classpath}"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${j2ee.platform.wsimport.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-ContribSETWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ContribSETWS"/>
+        <property name="wsdl-ContribSETWS" location="${meta.inf}/xml-resources/web-service-references/ContribSETWS/wsdl/ContribSETWS.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ContribSETWS" destdir="${build.generated.dir}/jax-wsCache/ContribSETWS" wsdl="${wsdl-ContribSETWS}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="file:/C:/Users/fgonzalez/Documents/Proyectos/RedCobrosApps/RedCobrosEjb/src/java/schema/ContribSETWS.wsdl" xnocompile="true" xendorsed="true" package="py.com.documenta.ws.set.contrib" target="2.1">
+            <binding dir="${meta.inf}/xml-resources/web-service-references/ContribSETWS/bindings" includes="ContribSETWS_handler.xml"/>
+            <depends file="${wsdl-ContribSETWS}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ContribSETWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ContribSETWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy todir="${classes.dir}">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ContribSETWS">
+                <include name="**/*.xml"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ContribSETWS" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/ContribSETWS"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/py/com/documenta/ws/set/contrib"/>
+    </target>
+    <target name="wsimport-client-RedCobroService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/RedCobroService"/>
+        <property name="wsdl-RedCobroService" location="${meta.inf}/xml-resources/web-service-references/RedCobroService/wsdl/RedCobroService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/RedCobroService" destdir="${build.generated.dir}/jax-wsCache/RedCobroService" wsdl="${wsdl-RedCobroService}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="file:/C:/Users/fgonzalez/Documents/Proyectos/RedCobrosApps/RedCobrosEjb/src/java/schema/RedCobroService.wsdl" xnocompile="true" xendorsed="true" target="2.1">
+            <binding dir="${meta.inf}/xml-resources/web-service-references/RedCobroService/bindings" includes="RedCobroService_handler.xml"/>
+            <depends file="${wsdl-RedCobroService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/RedCobroService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/RedCobroService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy todir="${classes.dir}">
+            <fileset dir="${build.generated.dir}/jax-wsCache/RedCobroService">
+                <include name="**/*.xml"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-RedCobroService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/RedCobroService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/py/com/documenta/ws"/>
+    </target>
+    <target name="wsimport-client-ServiceActivacion" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ServiceActivacion"/>
+        <property name="wsdl-ServiceActivacion" location="${meta.inf}/xml-resources/web-service-references/ServiceActivacion/wsdl/ServiceActivacion.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServiceActivacion" destdir="${build.generated.dir}/jax-wsCache/ServiceActivacion" wsdl="${wsdl-ServiceActivacion}" catalog="catalog.xml" extension="true" verbose="true" fork="false" wsdlLocation="file:/C:/Users/ecuenca/Documents/PractiGiro/Repositorio/Appet/RedCobrosEjb/src/java/schema/ServiceActivacion.wsdl" xnocompile="true" xendorsed="true" target="2.1">
+            <depends file="${wsdl-ServiceActivacion}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ServiceActivacion"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ServiceActivacion">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ServiceActivacion" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/ServiceActivacion"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/py/com/konecta/accounteracti"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-ContribSETWS, wsimport-client-RedCobroService, wsimport-client-ServiceActivacion"/>
+</project>

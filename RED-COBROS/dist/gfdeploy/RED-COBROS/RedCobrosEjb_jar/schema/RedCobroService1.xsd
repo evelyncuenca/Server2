@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-752-. -->
+<xs:schema xmlns:tns="http://xml.netbeans.org/schema/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://xml.netbeans.org/schema/common">
+
+    <xs:complexType name="RespuestaCobranza">
+        <xs:sequence>
+            <xs:element name="estado" type="tns:EstadoTransaccion" />
+            <xs:element name="idTransaccion" type="xs:long" minOccurs="0" />
+            <xs:element name="nroBoleta" type="xs:string" minOccurs="0" />
+            <xs:element name="ticket" type="xs:string" minOccurs="0" />
+            <xs:element name="adicional" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="EstadoTransaccion">
+        <xs:sequence>
+            <xs:element name="codigoRetorno" type="xs:int" />
+            <xs:element name="descripcion" type="xs:string" />
+            <xs:element name="idLogTransaccion" type="xs:long" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RespuestaConsultaCodigoBarras">
+        <xs:sequence>
+            <xs:element name="estado" type="tns:EstadoTransaccion" />
+            <xs:element name="referenciaPago" type="xs:string" minOccurs="0" />
+            <xs:element name="monto" type="xs:decimal" minOccurs="0" />
+            <xs:element name="comision" type="xs:decimal" minOccurs="0" />
+            <xs:element name="mensaje" type="xs:string" minOccurs="0" />
+            <xs:element name="idServicio" type="xs:int" minOccurs="0" />
+            <xs:element name="Monedas" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Moneda" type="tns:ElementoMoneda" maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Adicionales" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Adicional" type="tns:ElementoAdicional" maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ElementoMoneda">
+        <xs:sequence>
+            <xs:element name="idMoneda" type="xs:int" />
+            <xs:element name="descripcion" type="xs:string" />
+            <xs:element name="abreviatura" type="xs:string" />
+            <xs:element name="tasa" type="xs:int" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ElementoAdicional">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string" />
+            <xs:element name="valor" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

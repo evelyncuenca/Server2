@@ -1,0 +1,87 @@
+<definitions name='EraManagementService' targetNamespace='http://py.gov.set.services/rucas/era' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://exception.rucas.set.gov.py/jaws' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://py.gov.set.services/rucas/era' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema elementFormDefault='qualified' targetNamespace='http://exception.rucas.set.gov.py/jaws' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns2='http://py.gov.set.services/rucas/era' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://exception.rucas.set.gov.py/jaws' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://py.gov.set.services/rucas/era'/>
+   <complexType name='RucasException'>
+    <sequence>
+     <element name='message' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <element name='RucasException' type='tns:RucasException'/>
+  </schema>
+  <schema elementFormDefault='qualified' targetNamespace='http://py.gov.set.services/rucas/era' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns1='http://exception.rucas.set.gov.py/jaws' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://py.gov.set.services/rucas/era' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://exception.rucas.set.gov.py/jaws'/>
+   <complexType name='RucasWsException'>
+    <complexContent>
+     <extension base='ns1:RucasException'>
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <element name='RucasWsException' type='tns:RucasWsException'/>
+  </schema>
+ </types>
+ <message name='EraManagement_guardarDDJJ'>
+  <part name='sessionId' type='xsd:string'/>
+  <part name='xmlDDJJ' type='xsd:string'/>
+  <part name='nroHash' type='xsd:string'/>
+ </message>
+ <message name='RucasWsException'>
+  <part element='tns:RucasWsException' name='RucasWsException'/>
+ </message>
+ <message name='EraManagement_consultarDDJJ'>
+  <part name='sessionId' type='xsd:string'/>
+  <part name='xmlDDJJ' type='xsd:string'/>
+  <part name='nroHash' type='xsd:string'/>
+ </message>
+ <message name='EraManagement_guardarDDJJResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <message name='EraManagement_consultarDDJJResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <portType name='EraManagement'>
+  <operation name='consultarDDJJ' parameterOrder='sessionId xmlDDJJ nroHash'>
+   <input message='tns:EraManagement_consultarDDJJ'/>
+   <output message='tns:EraManagement_consultarDDJJResponse'/>
+   <fault message='tns:RucasWsException' name='RucasWsException'/>
+  </operation>
+  <operation name='guardarDDJJ' parameterOrder='sessionId xmlDDJJ nroHash'>
+   <input message='tns:EraManagement_guardarDDJJ'/>
+   <output message='tns:EraManagement_guardarDDJJResponse'/>
+   <fault message='tns:RucasWsException' name='RucasWsException'/>
+  </operation>
+ </portType>
+ <binding name='EraManagementBinding' type='tns:EraManagement'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='consultarDDJJ'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://py.gov.set.services/rucas/era' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://py.gov.set.services/rucas/era' use='literal'/>
+   </output>
+   <fault name='RucasWsException'>
+    <soap:fault name='RucasWsException' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='guardarDDJJ'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://py.gov.set.services/rucas/era' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://py.gov.set.services/rucas/era' use='literal'/>
+   </output>
+   <fault name='RucasWsException'>
+    <soap:fault name='RucasWsException' use='literal'/>
+   </fault>
+  </operation>
+ </binding>
+ <service name='EraManagementService'>
+  <port binding='tns:EraManagementBinding' name='EraManagementPort'>
+   <soap:address location='http://fi-c.set.gov.py:8080/rucas/EraManagementEJB'/>
+  </port>
+ </service>
+</definitions>

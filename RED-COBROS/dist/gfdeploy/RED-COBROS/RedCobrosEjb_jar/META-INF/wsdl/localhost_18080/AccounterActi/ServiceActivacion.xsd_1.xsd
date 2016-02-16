@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.1.1-b09 (branches/2.1-6834; 2011-07-16T17:14:48+0000) JAXWS-RI/2.2.5-promoted-b04 JAXWS/2.2. --><xs:schema xmlns:tns="http://accounteracti.konecta.com.py/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://accounteracti.konecta.com.py/">
+
+<xs:element name="activarCliente" type="tns:activarCliente"/>
+
+<xs:element name="activarClienteResponse" type="tns:activarClienteResponse"/>
+
+<xs:element name="crearCuenta" type="tns:crearCuenta"/>
+
+<xs:element name="crearCuentaResponse" type="tns:crearCuentaResponse"/>
+
+<xs:complexType name="crearCuenta">
+<xs:sequence>
+<xs:element name="pojo" type="tns:pojo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pojo">
+<xs:sequence>
+<xs:element name="barrio" type="xs:string" minOccurs="0"/>
+<xs:element name="cedulaFrontal" type="xs:base64Binary" minOccurs="0"/>
+<xs:element name="cedulaReversa" type="xs:base64Binary" minOccurs="0"/>
+<xs:element name="ciudad" type="xs:string" minOccurs="0"/>
+<xs:element name="codigoPostal" type="xs:string" minOccurs="0"/>
+<xs:element name="departamento" type="xs:string" minOccurs="0"/>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="estadoCivil" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaNacimiento" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaSwicth" type="xs:string" minOccurs="0"/>
+<xs:element name="idCuenta" type="xs:long"/>
+<xs:element name="idTipoUsuario" type="xs:int"/>
+<xs:element name="idTransaccion" type="xs:long"/>
+<xs:element name="numeroDocumento" type="xs:string" minOccurs="0"/>
+<xs:element name="numeroRuc" type="xs:string" minOccurs="0"/>
+<xs:element name="piso" type="xs:string" minOccurs="0"/>
+<xs:element name="primerApellido" type="xs:string" minOccurs="0"/>
+<xs:element name="primerNombre" type="xs:string" minOccurs="0"/>
+<xs:element name="segundoApellido" type="xs:string" minOccurs="0"/>
+<xs:element name="segundoNombre" type="xs:string" minOccurs="0"/>
+<xs:element name="sexo" type="xs:string" minOccurs="0"/>
+<xs:element name="telefonoFijo" type="xs:string" minOccurs="0"/>
+<xs:element name="telefonoMovil" type="xs:string" minOccurs="0"/>
+<xs:element name="ticket" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearCuentaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:response" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="response">
+<xs:sequence>
+<xs:element name="mensaje" type="xs:string" minOccurs="0"/>
+<xs:element name="status" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="activarCliente">
+<xs:sequence>
+<xs:element name="pojo" type="tns:pojo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="activarClienteResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:response" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

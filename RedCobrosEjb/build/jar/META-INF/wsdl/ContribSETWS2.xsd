@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-752-. --><xs:schema xmlns:tns="http://contrib.ws.daemon.documenta.com.py/" xmlns:ns1="http://xml.netbeans.org/schema/Contrib" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://contrib.ws.daemon.documenta.com.py/">
+
+<xs:import namespace="http://xml.netbeans.org/schema/Contrib" schemaLocation="ContribSETWS1.xsd" />
+
+<xs:element name="consulta" type="tns:consulta" />
+
+<xs:element name="consultaResponse" type="tns:consultaResponse" />
+
+<xs:element name="mergeContrib" type="tns:mergeContrib" />
+
+<xs:element name="mergeContribResponse" type="tns:mergeContribResponse" />
+
+<xs:complexType name="mergeContrib">
+<xs:sequence>
+<xs:element name="contribuyente" type="ns1:contribuyente" minOccurs="0" />
+<xs:element name="modo" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mergeContribResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:contribuyente" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consulta">
+<xs:sequence>
+<xs:element name="rucNuevo" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultaResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:contribuyente" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1">
+        <file>
+            <url>src/java/py/com/konecta/redcobros/ejb/impl/ReportesFacadeImpl.java</url>
+            <line>1139</line>
+        </file>
+    </editor-bookmarks>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0">
+        <file>
+            <url>src/java/py/com/konecta/redcobros/ejb/impl/ReportesFacadeImpl.java</url>
+            <bookmark id="0">
+                <name/>
+                <line>1145</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group name="Documenta.Interfaz">
+            <file>file:/C:/Users/igaona/Proyectos/Documenta/Fuentes/Activos/Interfaz/Proyectos/RedCobrosApps/RedCobrosEjb/src/java/py/com/konecta/redcobros/ejb/impl/ContribuyentesFacadeImpl.java</file>
+        </group>
+        <group name="Documenta.Clearing-Replicador">
+            <file>file:/C:/Users/igaona/Proyectos/Documenta/Fuentes/Activos/Interfaz/Proyectos/RedCobrosApps/RedCobrosEjb/src/java/py/com/konecta/redcobros/ejb/impl/ContribuyentesFacadeImpl.java</file>
+        </group>
+        <group name="Documenta.Interfaz.Applet">
+            <file>file:/C:/Users/igaona/Proyectos/Documenta/Fuentes/Activos/Interfaz/Proyectos/RedCobrosApps/RedCobrosEjb/src/java/py/com/konecta/redcobros/ejb/impl/UsuarioTerminalFacadeImpl.java</file>
+            <file>file:/C:/Users/igaona/Proyectos/Documenta/Fuentes/Activos/Interfaz/Proyectos/RedCobrosApps/RedCobrosEjb/src/java/py/com/konecta/redcobros/ejb/impl/ReportesFacadeImpl.java</file>
+            <file>file:/C:/Users/igaona/Proyectos/Documenta/Fuentes/Activos/Interfaz/Proyectos/RedCobrosApps/RedCobrosEjb/src/java/py/com/konecta/redcobros/ejb/ReportesFacade.java</file>
+        </group>
+        <group name="Documenta.Autorizador"/>
+        <group name="Documenta"/>
+        <group name="DocumentaApplet"/>
+        <group name="DocumentaSinApplet"/>
+        <group name="DocumentaConApplet">
+            <file>file:/C:/Users/Fernando/Documents/NetBeansProjects/Documenta/Cajas/ConApplet/RedCobrosEjb/src/java/py/com/konecta/redcobros/ejb/impl/TransaccionFacadeImpl.java</file>
+            <file>file:/C:/Users/Fernando/Documents/NetBeansProjects/Documenta/Cajas/ConApplet/RedCobrosEjb/src/java/py/com/konecta/redcobros/utiles/UtilesSet.java</file>
+            <file>file:/C:/Users/Fernando/Documents/NetBeansProjects/Documenta/Cajas/ConApplet/RedCobrosEjb/src/java/py/com/konecta/redcobros/ejb/impl/FormContribFacadeImpl.java</file>
+            <file>file:/C:/Users/Fernando/Documents/NetBeansProjects/Documenta/Cajas/ConApplet/RedCobrosEjb/src/java/py/com/konecta/redcobros/ejb/FormContribFacade.java</file>
+            <file>file:/C:/Users/Fernando/Documents/NetBeansProjects/Documenta/Cajas/ConApplet/RedCobrosEjb/src/java/py/com/documenta/set/main/WsSet.java</file>
+        </group>
+        <group/>
+    </open-files>
+</project-private>

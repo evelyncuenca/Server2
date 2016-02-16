@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-752-. -->
+<xs:schema xmlns:tns="http://ws.onlineManager.documenta.com.py/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.onlineManager.documenta.com.py/">
+
+    <xs:complexType name="olDetalleReferencia">
+        <xs:sequence>
+            <xs:element name="acumulado" type="xs:decimal" minOccurs="0" />
+            <xs:element name="comision" type="xs:decimal" minOccurs="0" />
+            <xs:element name="descipcion" type="xs:string" minOccurs="0" />
+            <xs:element name="hashMapContainer" type="tns:hashMapContainer" minOccurs="0" />
+            <xs:element name="idMoneda" type="xs:int" minOccurs="0" />
+            <xs:element name="monto" type="xs:decimal" minOccurs="0" />
+            <xs:element name="referenciaPago" type="xs:string" minOccurs="0" />
+            <xs:element name="tasa" type="xs:int" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="hashMapContainer">
+        <xs:sequence>
+            <xs:element name="map">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="entry" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="key" type="xs:string" minOccurs="0" />
+                                    <xs:element name="value" type="tns:mapValueContainer" minOccurs="0" />
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="mapValueContainer">
+        <xs:sequence>
+            <xs:element name="legend" type="xs:string" minOccurs="0" />
+            <xs:element name="value" type="xs:string" minOccurs="0" />
+            <xs:element name="visible" type="xs:boolean" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="olResponseConsulta">
+        <xs:sequence>
+            <xs:element name="cambioMontoPermitido" type="xs:boolean" />
+            <xs:element name="codRetorno" type="xs:int" minOccurs="0" />
+            <xs:element name="detalleServicios" type="tns:olDetalleServicio" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="mensajeOperacion" type="xs:string" minOccurs="0" />
+            <xs:element name="referenciaConsulta" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="olDetalleServicio">
+        <xs:sequence>
+            <xs:element name="detalleReferencias" type="tns:olDetalleReferencia" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="idServicio" type="xs:int" minOccurs="0" />
+            <xs:element name="monedas" type="tns:moneda" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="tipoAcumulado" type="tns:olTipoAcumulado" minOccurs="0" />
+            <xs:element name="tipoSeleccion" type="tns:olTipoSeleccion" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="moneda">
+        <xs:sequence>
+            <xs:element name="abreviatura" type="xs:string" minOccurs="0" />
+            <xs:element name="descripcion" type="xs:string" minOccurs="0" />
+            <xs:element name="idMoneda" type="xs:int" minOccurs="0" />
+            <xs:element name="tasa" type="xs:int" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="telefonia">
+        <xs:sequence>
+            <xs:element name="facturador" type="xs:string" minOccurs="0" />
+            <xs:element name="idFacturador" type="xs:string" minOccurs="0" />
+            <xs:element name="idServicio" type="xs:string" minOccurs="0" />
+            <xs:element name="montoMaximo" type="xs:int" minOccurs="0" />
+            <xs:element name="montoMinimo" type="xs:int" minOccurs="0" />
+            <xs:element name="servicio" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="olTipoAcumulado">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PAGO_ANTERIORES" />
+            <xs:enumeration value="PAGO_TOTAL" />
+            <xs:enumeration value="PAGO_INDEPENDIENTE" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="olTipoSeleccion">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="RADIO_BUTTON" />
+            <xs:enumeration value="CHECK_BOX" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

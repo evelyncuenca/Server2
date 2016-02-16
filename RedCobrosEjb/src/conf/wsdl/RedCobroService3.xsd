@@ -1,0 +1,720 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-752-. -->
+<xs:schema xmlns:tns="http://ws.documenta.com.py/" xmlns:ns3="http://ws.onlineManager.documenta.com.py/" xmlns:ns2="http://practigiro.ws.documenta.com.py/" xmlns:ns1="http://xml.netbeans.org/schema/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.documenta.com.py/">
+
+    <xs:import namespace="http://xml.netbeans.org/schema/common" schemaLocation="RedCobroService1.xsd" />
+
+    <xs:import namespace="http://practigiro.ws.documenta.com.py/" schemaLocation="RedCobroService4.xsd" />
+
+    <xs:import namespace="http://ws.onlineManager.documenta.com.py/" schemaLocation="RedCobroService2.xsd" />
+
+    <xs:element name="Exception" type="tns:Exception" />
+
+    <xs:element name="altaCliente" type="tns:altaCliente" />
+
+    <xs:element name="altaClienteResponse" type="tns:altaClienteResponse" />
+
+    <xs:element name="anulacion" type="tns:anulacion" />
+
+    <xs:element name="anulacionResponse" type="tns:anulacionResponse" />
+
+    <xs:element name="anulacionWrap" type="tns:anulacionWrap" />
+
+    <xs:element name="anulacionWrapResponse" type="tns:anulacionWrapResponse" />
+
+    <xs:element name="consultaTrxRc" type="tns:consultaTrxRc" />
+
+    <xs:element name="consultaTrxRcResponse" type="tns:consultaTrxRcResponse" />
+
+    <xs:element name="consultaTrxS" type="tns:consultaTrxS" />
+
+    <xs:element name="consultaTrxSResponse" type="tns:consultaTrxSResponse" />
+
+    <xs:element name="getCliente" type="tns:getCliente" />
+
+    <xs:element name="getClienteResponse" type="tns:getClienteResponse" />
+
+    <xs:element name="getDatosEnvio" type="tns:getDatosEnvio" />
+
+    <xs:element name="getDatosEnvioResponse" type="tns:getDatosEnvioResponse" />
+
+    <xs:element name="getMensajeGenerico" type="tns:getMensajeGenerico" />
+
+    <xs:element name="getMensajeGenericoResponse" type="tns:getMensajeGenericoResponse" />
+
+    <xs:element name="getParametroComision" type="tns:getParametroComision" />
+
+    <xs:element name="getParametroComisionResponse" type="tns:getParametroComisionResponse" />
+
+    <xs:element name="getProximoNroOrden" type="tns:getProximoNroOrden" />
+
+    <xs:element name="getProximoNroOrdenResponse" type="tns:getProximoNroOrdenResponse" />
+
+    <xs:element name="getServicios" type="tns:getServicios" />
+
+    <xs:element name="getServiciosResponse" type="tns:getServiciosResponse" />
+
+    <xs:element name="getTicket" type="tns:getTicket" />
+
+    <xs:element name="getTicketResponse" type="tns:getTicketResponse" />
+
+    <xs:element name="listCiudad" type="tns:listCiudad" />
+
+    <xs:element name="listCiudadResponse" type="tns:listCiudadResponse" />
+
+    <xs:element name="listTipoDocumento" type="tns:listTipoDocumento" />
+
+    <xs:element name="listTipoDocumentoResponse" type="tns:listTipoDocumentoResponse" />
+
+    <xs:element name="pagoCodigoBarras" type="tns:pagoCodigoBarras" />
+
+    <xs:element name="pagoCodigoBarrasResponse" type="tns:pagoCodigoBarrasResponse" />
+
+    <xs:element name="procesarConsulta" type="tns:procesarConsulta" />
+
+    <xs:element name="procesarConsultaResponse" type="tns:procesarConsultaResponse" />
+
+    <xs:element name="procesarConsultaWrap" type="tns:procesarConsultaWrap" />
+
+    <xs:element name="procesarConsultaWrapResponse" type="tns:procesarConsultaWrapResponse" />
+
+    <xs:element name="procesarServicio" type="tns:procesarServicio" />
+
+    <xs:element name="procesarServicioResponse" type="tns:procesarServicioResponse" />
+
+    <xs:element name="procesarServicioWrap" type="tns:procesarServicioWrap" />
+
+    <xs:element name="procesarServicioWrapResponse" type="tns:procesarServicioWrapResponse" />
+
+    <xs:element name="realizarCobranzaManual" type="tns:realizarCobranzaManual" />
+
+    <xs:element name="realizarCobranzaManualResponse" type="tns:realizarCobranzaManualResponse" />
+
+    <xs:element name="realizarCobranzaManualWrap" type="tns:realizarCobranzaManualWrap" />
+
+    <xs:element name="realizarCobranzaManualWrapResponse" type="tns:realizarCobranzaManualWrapResponse" />
+
+    <xs:element name="reimpresion" type="tns:reimpresion" />
+
+    <xs:element name="reimpresionResponse" type="tns:reimpresionResponse" />
+
+    <xs:element name="resolverServicio" type="tns:resolverServicio" />
+
+    <xs:element name="resolverServicioConsulta" type="tns:resolverServicioConsulta" />
+
+    <xs:element name="resolverServicioConsultaResponse" type="tns:resolverServicioConsultaResponse" />
+
+    <xs:element name="resolverServicioResponse" type="tns:resolverServicioResponse" />
+
+    <xs:element name="resolverServicioTelefonia" type="tns:resolverServicioTelefonia" />
+
+    <xs:element name="resolverServicioTelefoniaResponse" type="tns:resolverServicioTelefoniaResponse" />
+
+    <xs:element name="setBloqueoClienteDDJJ" type="tns:setBloqueoClienteDDJJ" />
+
+    <xs:element name="setBloqueoClienteDDJJResponse" type="tns:setBloqueoClienteDDJJResponse" />
+
+    <xs:element name="test" type="tns:test" />
+
+    <xs:element name="testAnulacion" type="tns:testAnulacion" />
+
+    <xs:element name="testAnulacionResponse" type="tns:testAnulacionResponse" />
+
+    <xs:element name="testCobroCB" type="tns:testCobroCB" />
+
+    <xs:element name="testCobroCBResponse" type="tns:testCobroCBResponse" />
+
+    <xs:element name="testConsulta" type="tns:testConsulta" />
+
+    <xs:element name="testConsultaResponse" type="tns:testConsultaResponse" />
+
+    <xs:element name="testGetServicio" type="tns:testGetServicio" />
+
+    <xs:element name="testGetServicioResponse" type="tns:testGetServicioResponse" />
+
+    <xs:element name="testPAGO" type="tns:testPAGO" />
+
+    <xs:element name="testPAGOResponse" type="tns:testPAGOResponse" />
+
+    <xs:element name="testPagoOL" type="tns:testPagoOL" />
+
+    <xs:element name="testPagoOLResponse" type="tns:testPagoOLResponse" />
+
+    <xs:element name="testResponse" type="tns:testResponse" />
+
+    <xs:element name="validarCodigoBarras" type="tns:validarCodigoBarras" />
+
+    <xs:element name="validarCodigoBarrasResponse" type="tns:validarCodigoBarrasResponse" />
+
+    <xs:complexType name="testPagoOL">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0" />
+            <xs:element name="arg1" type="xs:string" minOccurs="0" />
+            <xs:element name="arg2" type="xs:string" minOccurs="0" />
+            <xs:element name="arg3" type="xs:string" minOccurs="0" />
+            <xs:element name="arg4" type="xs:string" minOccurs="0" />
+            <xs:element name="arg5" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="testPagoOLResponse">
+        <xs:sequence>
+            <xs:element name="return" type="ns1:RespuestaCobranza" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getCliente">
+        <xs:sequence>
+            <xs:element name="user" type="xs:string" minOccurs="0" />
+            <xs:element name="password" type="xs:string" minOccurs="0" />
+            <xs:element name="idTipoDocumento" type="xs:short" minOccurs="0" />
+            <xs:element name="idDocumento" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getClienteResponse">
+        <xs:sequence>
+            <xs:element name="return" type="ns2:infoCliente" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="resolverServicio">
+        <xs:sequence>
+            <xs:element name="codigoBarras" type="xs:string" minOccurs="0" />
+            <xs:element name="auth" type="tns:autenticacion" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="autenticacion">
+        <xs:sequence>
+            <xs:element name="clave" type="xs:string" minOccurs="0" />
+            <xs:element name="hash" type="xs:string" minOccurs="0" />
+            <xs:element name="idGestion" type="xs:decimal" minOccurs="0" />
+            <xs:element name="idUsuario" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="resolverServicioResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Exception">
+        <xs:sequence>
+            <xs:element name="message" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="consultaTrxS">
+        <xs:sequence>
+            <xs:element name="secuencia" type="xs:string" minOccurs="0" />
+            <xs:element name="entidad" type="xs:long" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="consultaTrxSResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="procesarServicioWrap">
+        <xs:sequence>
+            <xs:element name="identificador" type="xs:long" minOccurs="0" />
+            <xs:element name="auth" type="tns:autenticacion" minOccurs="0" />
+            <xs:element name="formaPago" type="tns:formaPago" minOccurs="0" />
+            <xs:element name="valoresIngresados" type="tns:hashMapContainer" minOccurs="0" />
+            <xs:element name="secuencia" type="xs:string" minOccurs="0" />
+            <xs:element name="entidad" type="xs:long" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="formaPago">
+        <xs:sequence>
+            <xs:element name="fechaCheque" type="xs:string" minOccurs="0" />
+            <xs:element name="idBanco" type="xs:decimal" minOccurs="0" />
+            <xs:element name="nroCheque" type="xs:string" minOccurs="0" />
+            <xs:element name="tipoPago" type="xs:int" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="hashMapContainer">
+        <xs:sequence>
+            <xs:element name="map">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="key" minOccurs="0" type="xs:string" />
+                                    <xs:element name="value" minOccurs="0" type="xs:string" />
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="procesarServicioWrapResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getParametroComision">
+        <xs:sequence>
+            <xs:element name="user" type="xs:string" minOccurs="0" />
+            <xs:element name="password" type="xs:string" minOccurs="0" />
+            <xs:element name="importe" type="xs:string" minOccurs="0" />
+            <xs:element name="moneda" type="xs:string" minOccurs="0" />
+            <xs:element name="isComisionIncluida" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getParametroComisionResponse">
+        <xs:sequence>
+            <xs:element name="return" type="ns2:parametroComision" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="listTipoDocumento">
+        <xs:sequence>
+            <xs:element name="user" type="xs:string" minOccurs="0" />
+            <xs:element name="password" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="listTipoDocumentoResponse">
+        <xs:sequence>
+            <xs:element name="return" type="ns2:tipoDocumento" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="test">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="testResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="testAnulacion">
+        <xs:sequence>
+            <xs:element name="usuario" type="xs:string" minOccurs="0" />
+            <xs:element name="clave" type="xs:string" minOccurs="0" />
+            <xs:element name="gestion" type="xs:string" minOccurs="0" />
+            <xs:element name="idTransaccionRc" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="testAnulacionResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="anulacion">
+        <xs:sequence>
+            <xs:element name="idTransaccion" type="xs:long" minOccurs="0" />
+            <xs:element name="motivo" type="xs:string" minOccurs="0" />
+            <xs:element name="auth" type="tns:autenticacion" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="anulacionResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getProximoNroOrden">
+        <xs:sequence>
+            <xs:element name="idRecaudador" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getProximoNroOrdenResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="setBloqueoClienteDDJJ">
+        <xs:sequence>
+            <xs:element name="user" type="xs:string" minOccurs="0" />
+            <xs:element name="password" type="xs:string" minOccurs="0" />
+            <xs:element name="idTipoDocumento" type="xs:string" minOccurs="0" />
+            <xs:element name="idDocumento" type="xs:string" minOccurs="0" />
+            <xs:element name="idTransaccion" type="xs:string" minOccurs="0" />
+            <xs:element name="idTipoOperacion" type="xs:string" minOccurs="0" />
+            <xs:element name="presento" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="setBloqueoClienteDDJJResponse">
+        <xs:sequence>
+            <xs:element name="return" type="ns2:respuesta" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="consultaTrxRc">
+        <xs:sequence>
+            <xs:element name="secuencia" type="xs:string" minOccurs="0" />
+            <xs:element name="entidad" type="xs:long" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="consultaTrxRcResponse">
+        <xs:sequence>
+            <xs:element name="return" type="ns1:RespuestaCobranza" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="procesarServicio">
+        <xs:sequence>
+            <xs:element name="identificador" type="xs:long" minOccurs="0" />
+            <xs:element name="auth" type="tns:autenticacion" minOccurs="0" />
+            <xs:element name="formaPago" type="tns:formaPago" minOccurs="0" />
+            <xs:element name="valoresIngresados" type="tns:hashMapContainer" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="procesarServicioResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="reimpresion">
+        <xs:sequence>
+            <xs:element name="identificador" type="xs:long" minOccurs="0" />
+            <xs:element name="auth" type="tns:autenticacion" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="reimpresionResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="listCiudad">
+        <xs:sequence>
+            <xs:element name="user" type="xs:string" minOccurs="0" />
+            <xs:element name="password" type="xs:string" minOccurs="0" />
+            <xs:element name="idDepartamento" type="xs:short" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="listCiudadResponse">
+        <xs:sequence>
+            <xs:element name="return" type="ns2:ciudad" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getMensajeGenerico">
+        <xs:sequence>
+            <xs:element name="identificador" type="xs:long" minOccurs="0" />
+            <xs:element name="auth" type="tns:autenticacion" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getMensajeGenericoResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="validarCodigoBarras">
+        <xs:sequence>
+            <xs:element name="codigoBarras" type="xs:string" minOccurs="0" />
+            <xs:element name="auth" type="tns:autenticacion" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="validarCodigoBarrasResponse">
+        <xs:sequence>
+            <xs:element name="return" type="ns1:RespuestaConsultaCodigoBarras" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="altaCliente">
+        <xs:sequence>
+            <xs:element name="user" type="xs:string" minOccurs="0" />
+            <xs:element name="password" type="xs:string" minOccurs="0" />
+            <xs:element name="cliente" type="ns2:infoCliente" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="altaClienteResponse">
+        <xs:sequence>
+            <xs:element name="return" type="ns2:respuesta" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getTicket">
+        <xs:sequence>
+            <xs:element name="identificador" type="xs:long" minOccurs="0" />
+            <xs:element name="auth" type="tns:autenticacion" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getTicketResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="realizarCobranzaManual">
+        <xs:sequence>
+            <xs:element name="idServicio" type="xs:int" minOccurs="0" />
+            <xs:element name="detalleReferencia" type="ns3:olDetalleReferencia" minOccurs="0" />
+            <xs:element name="auth" type="tns:autenticacion" minOccurs="0" />
+            <xs:element name="formaPago" type="tns:formaPago" minOccurs="0" />
+            <xs:element name="referenciaConsulta" type="xs:string" minOccurs="0" />
+            <xs:element name="valoresIngresados" type="tns:hashMapContainer" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="realizarCobranzaManualResponse">
+        <xs:sequence>
+            <xs:element name="return" type="ns1:RespuestaCobranza" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="pagoCodigoBarras">
+        <xs:sequence>
+            <xs:element name="respuestaConsulta" type="ns1:RespuestaConsultaCodigoBarras" minOccurs="0" />
+            <xs:element name="auth" type="tns:autenticacion" minOccurs="0" />
+            <xs:element name="formaPago" type="tns:formaPago" minOccurs="0" />
+            <xs:element name="valoresIngresados" type="tns:hashMapContainer" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="pagoCodigoBarrasResponse">
+        <xs:sequence>
+            <xs:element name="return" type="ns1:RespuestaCobranza" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="testCobroCB">
+        <xs:sequence>
+            <xs:element name="usuario" type="xs:string" minOccurs="0" />
+            <xs:element name="clave" type="xs:string" minOccurs="0" />
+            <xs:element name="gestion" type="xs:string" minOccurs="0" />
+            <xs:element name="codigoBarras" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="testCobroCBResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="procesarConsulta">
+        <xs:sequence>
+            <xs:element name="auth" type="tns:autenticacion" minOccurs="0" />
+            <xs:element name="respuestaConsulta" type="ns3:olResponseConsulta" minOccurs="0" />
+            <xs:element name="formaPago" type="tns:formaPago" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="procesarConsultaResponse">
+        <xs:sequence>
+            <xs:element name="return" type="ns1:RespuestaCobranza" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="anulacionWrap">
+        <xs:sequence>
+            <xs:element name="secuencia" type="xs:string" minOccurs="0" />
+            <xs:element name="entidad" type="xs:long" minOccurs="0" />
+            <xs:element name="motivo" type="xs:string" minOccurs="0" />
+            <xs:element name="auth" type="tns:autenticacion" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="anulacionWrapResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="resolverServicioTelefonia">
+        <xs:sequence>
+            <xs:element name="referencia" type="xs:string" minOccurs="0" />
+            <xs:element name="tipoServicio" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="resolverServicioTelefoniaResponse">
+        <xs:sequence>
+            <xs:element name="return" type="ns3:telefonia" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getDatosEnvio">
+        <xs:sequence>
+            <xs:element name="user" type="xs:string" minOccurs="0" />
+            <xs:element name="password" type="xs:string" minOccurs="0" />
+            <xs:element name="codigoRemesa" type="xs:string" minOccurs="0" />
+            <xs:element name="idTipoDocumento" type="xs:short" minOccurs="0" />
+            <xs:element name="idDocumento" type="xs:string" minOccurs="0" />
+            <xs:element name="idRed" type="xs:string" minOccurs="0" />
+            <xs:element name="idRecaudador" type="xs:string" minOccurs="0" />
+            <xs:element name="idSucursal" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getDatosEnvioResponse">
+        <xs:sequence>
+            <xs:element name="return" type="ns2:datosTransaccion" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="testConsulta">
+        <xs:sequence>
+            <xs:element name="usuario" type="xs:string" minOccurs="0" />
+            <xs:element name="clave" type="xs:string" minOccurs="0" />
+            <xs:element name="gestion" type="xs:string" minOccurs="0" />
+            <xs:element name="idFacturador" type="xs:string" minOccurs="0" />
+            <xs:element name="idServicio" type="xs:string" minOccurs="0" />
+            <xs:element name="referenciaPago" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="testConsultaResponse">
+        <xs:sequence>
+            <xs:element name="return" type="ns3:olResponseConsulta" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="testGetServicio">
+        <xs:sequence>
+            <xs:element name="usuario" type="xs:string" minOccurs="0" />
+            <xs:element name="clave" type="xs:string" minOccurs="0" />
+            <xs:element name="gestion" type="xs:string" minOccurs="0" />
+            <xs:element name="propiedad" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="testGetServicioResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:definicionFacturador" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="definicionFacturador">
+        <xs:sequence>
+            <xs:element name="descripcion" type="xs:string" minOccurs="0" />
+            <xs:element name="idFacturador" type="xs:decimal" minOccurs="0" />
+            <xs:element name="lsDefinicionServicios" type="tns:definicionServicio" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="definicionServicio">
+        <xs:sequence>
+            <xs:element name="anulable" type="xs:unsignedShort" />
+            <xs:element name="cbLongitud" type="xs:short" />
+            <xs:element name="cbPresente" type="xs:unsignedShort" />
+            <xs:element name="descripcion" type="xs:string" minOccurs="0" />
+            <xs:element name="habilitado" type="xs:unsignedShort" />
+            <xs:element name="idServicio" type="xs:int" />
+            <xs:element name="tagReferencia" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="testPAGO">
+        <xs:sequence>
+            <xs:element name="usuario" type="xs:string" minOccurs="0" />
+            <xs:element name="clave" type="xs:string" minOccurs="0" />
+            <xs:element name="gestion" type="xs:string" minOccurs="0" />
+            <xs:element name="formaPago" type="xs:string" minOccurs="0" />
+            <xs:element name="idLogTransaccionRc" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="testPAGOResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="procesarConsultaWrap">
+        <xs:sequence>
+            <xs:element name="auth" type="tns:autenticacion" minOccurs="0" />
+            <xs:element name="respuestaConsulta" type="ns3:olResponseConsulta" minOccurs="0" />
+            <xs:element name="formaPago" type="tns:formaPago" minOccurs="0" />
+            <xs:element name="secuencia" type="xs:string" minOccurs="0" />
+            <xs:element name="entidad" type="xs:long" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="procesarConsultaWrapResponse">
+        <xs:sequence>
+            <xs:element name="return" type="ns1:RespuestaCobranza" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="resolverServicioConsulta">
+        <xs:sequence>
+            <xs:element name="idFacturador" type="xs:decimal" minOccurs="0" />
+            <xs:element name="idServicio" type="xs:int" minOccurs="0" />
+            <xs:element name="referenciaPago" type="xs:string" minOccurs="0" />
+            <xs:element name="auth" type="tns:autenticacion" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="resolverServicioConsultaResponse">
+        <xs:sequence>
+            <xs:element name="return" type="ns3:olResponseConsulta" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="realizarCobranzaManualWrap">
+        <xs:sequence>
+            <xs:element name="idServicio" type="xs:int" minOccurs="0" />
+            <xs:element name="detalleReferencia" type="ns3:olDetalleReferencia" minOccurs="0" />
+            <xs:element name="auth" type="tns:autenticacion" minOccurs="0" />
+            <xs:element name="formaPago" type="tns:formaPago" minOccurs="0" />
+            <xs:element name="referenciaConsulta" type="xs:string" minOccurs="0" />
+            <xs:element name="valoresIngresados" type="tns:hashMapContainer" minOccurs="0" />
+            <xs:element name="secuencia" type="xs:string" minOccurs="0" />
+            <xs:element name="entidad" type="xs:long" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="realizarCobranzaManualWrapResponse">
+        <xs:sequence>
+            <xs:element name="return" type="ns1:RespuestaCobranza" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getServicios">
+        <xs:sequence>
+            <xs:element name="arg0" type="tns:autenticacion" minOccurs="0" />
+            <xs:element name="arg1" type="tns:propiedadServicio" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getServiciosResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:definicionFacturador" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="propiedadServicio">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CONSULTABLE" />
+            <xs:enumeration value="RECARGABLE" />
+            <xs:enumeration value="MANUAL" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-752-. --><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://xml.netbeans.org/schema/Contrib">
+
+<xs:complexType name="contribuyente">
+<xs:sequence>
+<xs:element name="digitoVerificador" type="xs:string" minOccurs="0" />
+<xs:element name="id" type="xs:string" minOccurs="0" />
+<xs:element name="mesCierre" type="xs:string" minOccurs="0" />
+<xs:element name="modalidad" type="xs:string" minOccurs="0" />
+<xs:element name="razonSocial" type="xs:string" minOccurs="0" />
+<xs:element name="rucNuevo" type="xs:string" minOccurs="0" />
+<xs:element name="rucViejo" type="xs:string" minOccurs="0" />
+<xs:element name="tipo" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

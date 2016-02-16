@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://ws.remesas.documenta.com.py/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.remesas.documenta.com.py/">
+
+<xs:element name="altaCliente" type="tns:altaCliente"/>
+
+<xs:element name="altaClienteResponse" type="tns:altaClienteResponse"/>
+
+<xs:element name="getDatosCliente" type="tns:getDatosCliente"/>
+
+<xs:element name="getDatosClienteResponse" type="tns:getDatosClienteResponse"/>
+
+<xs:element name="getParametrosDeComision" type="tns:getParametrosDeComision"/>
+
+<xs:element name="getParametrosDeComisionResponse" type="tns:getParametrosDeComisionResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:element name="infoCliente" type="tns:infoCliente"/>
+
+<xs:element name="listaDeCiudades" type="tns:listaDeCiudades"/>
+
+<xs:element name="listaDeCiudadesResponse" type="tns:listaDeCiudadesResponse"/>
+
+<xs:element name="listaDeDepartamentos" type="tns:listaDeDepartamentos"/>
+
+<xs:element name="listaDeDepartamentosResponse" type="tns:listaDeDepartamentosResponse"/>
+
+<xs:element name="listaDePaises" type="tns:listaDePaises"/>
+
+<xs:element name="listaDePaisesResponse" type="tns:listaDePaisesResponse"/>
+
+<xs:element name="listaTipoDocumentos" type="tns:listaTipoDocumentos"/>
+
+<xs:element name="listaTipoDocumentosResponse" type="tns:listaTipoDocumentosResponse"/>
+
+<xs:element name="pais" type="tns:pais"/>
+
+<xs:element name="tipoDocumento" type="tns:tipoDocumento"/>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDatosCliente">
+<xs:sequence>
+<xs:element name="tipoDocumento" type="xs:string" minOccurs="0"/>
+<xs:element name="documentoCliente" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDatosClienteResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:infoCliente" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="infoCliente">
+<xs:sequence>
+<xs:element name="apellidos" type="xs:string" minOccurs="0"/>
+<xs:element name="bloqueado" type="xs:unsignedShort"/>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaEmisionDocumento" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaNacimiento" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="idDocumento" type="xs:string" minOccurs="0"/>
+<xs:element name="idTipoDocumento" type="tns:tipoDocumento" minOccurs="0"/>
+<xs:element name="motivoBloqueo" type="xs:string" minOccurs="0"/>
+<xs:element name="nombres" type="xs:string" minOccurs="0"/>
+<xs:element name="profesion" type="xs:string" minOccurs="0"/>
+<xs:element name="telefono" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tipoDocumento">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="idTipoDocumento" type="xs:short" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getParametrosDeComision">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getParametrosDeComisionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listaDeDepartamentos">
+<xs:sequence>
+<xs:element name="pais" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listaDeDepartamentosResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listaDePaises">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listaDePaisesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:pais" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pais">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="idPais" type="xs:short" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listaDeCiudades">
+<xs:sequence>
+<xs:element name="departamento" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listaDeCiudadesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listaTipoDocumentos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listaTipoDocumentosResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="altaCliente">
+<xs:sequence>
+<xs:element name="datosCliente" type="tns:infoCliente" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="altaClienteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

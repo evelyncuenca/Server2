@@ -1,0 +1,110 @@
+/*
+Document   : style
+Created on : Oct 20, 2010, 11:17:12 AM
+Author     : konecta
+Description:
+Purpose of the stylesheet follows.
+*/
+
+/*
+TODO customize this sample style
+Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root {
+    display: block;
+}
+
+#buttons-wrap {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    float: left;
+}
+.button {
+    position:relative;
+}
+.button {
+    -moz-border-radius:8px 8px 8px 8px;
+    -moz-box-shadow:0 1px 0 black;
+    background:-moz-linear-gradient(center top , #65A9D7, #3E779D) repeat scroll 0 0 transparent;
+    border-top:1px solid #96D1F8;
+    color:white;
+    font-size:14px;
+    padding:5px 10px;
+    text-decoration:none;
+    text-shadow:0 1px 0 rgba(0, 0, 0, 0.4);
+    vertical-align:middle;
+}
+.button:hover {
+    background:none repeat scroll 0 0 #28597A;
+    border-top-color:#28597A;
+    color:#CCCCCC;
+}
+.button:active {
+    background:none repeat scroll 0 0 #1B435E;
+    border-top-color:#1B435E;
+    outline:0 none;
+}
+
+img.icono {
+    -moz-border-radius:10px 10px 10px 10px;
+    border:6px solid #666666;
+    -webkit-box-shadow: -5px 10px 10px #363738;
+    -moz-box-shadow: -5px 10px 10px #363738;
+    box-shadow: -5px 10px 10px #363738;
+    margin-bottom:1em;
+}
+
+#col {width:150px;float:left; margin:2px; padding: 10px;}
+
+#row {width:100%; margin:2px;}
+
+
+
+#container{
+    width:90%;
+    margin: 30px;
+}
+#container .image_box{
+    /*padding: 10px;*/
+    float:left;
+    width:130px;
+    height:100px;
+    /*text-align:center;
+    /*background:#123;*/
+}
+#container .image{
+    width:100px;
+    height:80px;
+    text-align:center;
+   /* text-align:center;
+    /*background:#369;*/
+    /*color:#fff;*/
+    /*text-align:center;*/
+   /* margin: 0 auto;*/
+    /*opacity:0.4;
+    filter:alpha(opacity=2);*/
+   /* -moz-border-radius:10px 10px 10px 10px;
+    border:6px solid #666666;
+    -webkit-box-shadow: -5px 10px 10px #363738;
+    -moz-box-shadow: -5px 10px 10px #363738;
+    box-shadow: -5px 10px 10px #363738; ;
+    margin-bottom:1em;*/
+    /*background: transparent url(Tigo.png) no-repeat;*/
+}
+#container2 .bottomtext{
+        width:100px;
+	height:20px;
+	font-size:18px;
+        font-weight:bold;
+
+}
+/*#container2 .image:hover{
+    opacity:50;
+    /*width:200px;
+	height:200px;
+	background: transparent url(images/Essap.png) no-repeat;*/
+/*}
+
+/*style='opacity:50;filter:alpha(opacity=2);'onmouseover='this.style.opacity=0.4' onmouseout='this.style.opacity=50'*/

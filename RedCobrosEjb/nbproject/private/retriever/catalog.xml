@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/RCDocumenta/RedCobroService?xsd=1" uri="localhost_8080/RCDocumenta/RedCobroService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/RCDocumenta/RedCobroService?xsd=2" uri="localhost_8080/RCDocumenta/RedCobroService.xsd_2.xsd"/>
+    <system systemId="http://192.168.30.62:18080/RCDocumenta/RedCobroService?xsd=1" uri="192.168.30.62_18080/RCDocumenta/RedCobroService.xsd_1.xsd"/>
+    <system systemId="http://192.168.30.62:18080/RCDocumenta/RedCobroService?xsd=2" uri="192.168.30.62_18080/RCDocumenta/RedCobroService.xsd_2.xsd"/>
+    <system systemId="http://localhost:5015/ContribSETWS?xsd=1" uri="localhost_5015/ContribSETWS.xsd_1.xsd"/>
+    <system systemId="http://192.168.30.65:8082/RCDocumenta/RedCobroService?xsd=1" uri="192.168.30.65_8082/RCDocumenta/RedCobroService.xsd_1.xsd"/>
+    <system systemId="http://192.168.30.65:8082/RCDocumenta/RedCobroService?xsd=2" uri="192.168.30.65_8082/RCDocumenta/RedCobroService.xsd_2.xsd"/>
+    <system systemId="http://schemas.xmlsoap.org/wsdl/soap/" uri="schemas.xmlsoap.org/wsdl/soap/index.xsd"/>
+    <system systemId="http://schemas.xmlsoap.org/wsdl/" uri="schemas.xmlsoap.org/wsdl/index.xsd"/>
+</catalog>

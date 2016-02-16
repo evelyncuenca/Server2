@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.6 in JDK 6. --><xs:schema xmlns:tns="http://practigiro.ws.documenta.com.py/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://practigiro.ws.documenta.com.py/">
+
+<xs:element name="altaCliente" type="tns:altaCliente"></xs:element>
+
+<xs:element name="altaClienteResponse" type="tns:altaClienteResponse"></xs:element>
+
+<xs:element name="envioRemesa" type="tns:envioRemesa"></xs:element>
+
+<xs:element name="envioRemesaResponse" type="tns:envioRemesaResponse"></xs:element>
+
+<xs:element name="getCliente" type="tns:getCliente"></xs:element>
+
+<xs:element name="getClienteResponse" type="tns:getClienteResponse"></xs:element>
+
+<xs:element name="getDatosEnvio" type="tns:getDatosEnvio"></xs:element>
+
+<xs:element name="getDatosEnvioResponse" type="tns:getDatosEnvioResponse"></xs:element>
+
+<xs:element name="getParametroComision" type="tns:getParametroComision"></xs:element>
+
+<xs:element name="getParametroComisionResponse" type="tns:getParametroComisionResponse"></xs:element>
+
+<xs:element name="listBarrio" type="tns:listBarrio"></xs:element>
+
+<xs:element name="listBarrioResponse" type="tns:listBarrioResponse"></xs:element>
+
+<xs:element name="listCiudad" type="tns:listCiudad"></xs:element>
+
+<xs:element name="listCiudadResponse" type="tns:listCiudadResponse"></xs:element>
+
+<xs:element name="listDepartamento" type="tns:listDepartamento"></xs:element>
+
+<xs:element name="listDepartamentoResponse" type="tns:listDepartamentoResponse"></xs:element>
+
+<xs:element name="listPais" type="tns:listPais"></xs:element>
+
+<xs:element name="listPaisResponse" type="tns:listPaisResponse"></xs:element>
+
+<xs:element name="listTipoDocumento" type="tns:listTipoDocumento"></xs:element>
+
+<xs:element name="listTipoDocumentoResponse" type="tns:listTipoDocumentoResponse"></xs:element>
+
+<xs:element name="retiroRemesa" type="tns:retiroRemesa"></xs:element>
+
+<xs:element name="retiroRemesaResponse" type="tns:retiroRemesaResponse"></xs:element>
+
+<xs:element name="revertirEnvio" type="tns:revertirEnvio"></xs:element>
+
+<xs:element name="revertirEnvioResponse" type="tns:revertirEnvioResponse"></xs:element>
+
+<xs:element name="revertirRetiro" type="tns:revertirRetiro"></xs:element>
+
+<xs:element name="revertirRetiroResponse" type="tns:revertirRetiroResponse"></xs:element>
+
+<xs:complexType name="listPais">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="password" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listPaisResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:pais" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pais">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idPais" type="xs:short" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="revertirRetiro">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="password" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="cliente" type="tns:infoCliente" minOccurs="0"></xs:element>
+<xs:element name="datosTrx" type="tns:datosTransaccion" minOccurs="0"></xs:element>
+<xs:element name="operacion" type="xs:int" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="infoCliente">
+<xs:sequence>
+<xs:element name="apellidos" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="bloqueado" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="direccion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="fechaEmisionDocumento" type="xs:dateTime" minOccurs="0"></xs:element>
+<xs:element name="fechaNacimiento" type="xs:dateTime" minOccurs="0"></xs:element>
+<xs:element name="id" type="tns:infoClienteId" minOccurs="0"></xs:element>
+<xs:element name="motivoBloqueo" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="nombres" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="profesion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="respuesta" type="tns:respuesta" minOccurs="0"></xs:element>
+<xs:element name="telefono" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="tipoDocumento" type="tns:tipoDocumento" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="infoClienteId">
+<xs:sequence>
+<xs:element name="idDocumento" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idTipoDocumento" type="xs:short" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="respuesta">
+<xs:sequence>
+<xs:element name="codigoRetorno" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tipoDocumento">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idTipoDocumento" type="xs:short" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="datosTransaccion">
+<xs:sequence>
+<xs:element name="datosTrx" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="mensajePromocional" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="respuesta" type="tns:respuesta" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="revertirRetiroResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:respuesta" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="altaCliente">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="password" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="cliente" type="tns:infoCliente" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="altaClienteResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:respuesta" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="retiroRemesa">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="password" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idUsuario" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idSucursal" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idTerminal" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idTipoDocumento" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idDocumento" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idRecaudador" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idEntidadFinanciera" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="nroCuenta" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="monto" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="isClientBL" type="xs:boolean" minOccurs="0"></xs:element>
+<xs:element name="codRemesa" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="retiroRemesaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:respuesta" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="envioRemesa">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="password" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idUsuario" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idSucursal" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idTerminal" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idTipoDocumento" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idDocumento" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idRecaudador" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idEntidadFinanciera" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="nroCuenta" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="monto" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="isClientBL" type="xs:boolean" minOccurs="0"></xs:element>
+<xs:element name="datoRetiro" type="tns:datoRetiro" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="datoRetiro">
+<xs:sequence>
+<xs:element name="apellido" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idCiudad" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="movil" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="nombre" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="telefono" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="envioRemesaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:respuestaEnvio" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="respuestaEnvio">
+<xs:sequence>
+<xs:element name="codRemesa" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="respuesta" type="tns:respuesta" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listCiudad">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="password" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idDepartamento" type="xs:short" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listCiudadResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:ciudad" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ciudad">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idCiudad" type="xs:int" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listBarrio">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="password" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idCiudad" type="xs:int" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listBarrioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:barrio" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="barrio">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idBarrio" type="xs:long" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listDepartamento">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="password" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idPais" type="xs:short" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listDepartamentoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:departamento" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="departamento">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idDepartamento" type="xs:short" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDatosEnvio">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="password" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="codigoRemesa" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idTipoDocumento" type="xs:short" minOccurs="0"></xs:element>
+<xs:element name="idDocumento" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDatosEnvioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:datosTransaccion" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="revertirEnvio">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="password" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="cliente" type="tns:infoCliente" minOccurs="0"></xs:element>
+<xs:element name="datosTrx" type="tns:datosTransaccion" minOccurs="0"></xs:element>
+<xs:element name="operacion" type="xs:int" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="revertirEnvioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:respuesta" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listTipoDocumento">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="password" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listTipoDocumentoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tipoDocumento" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getParametroComision">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="password" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idTipoDocumento" type="xs:short" minOccurs="0"></xs:element>
+<xs:element name="idDocumento" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="clienteBeneficiario" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idRecaudador" type="xs:int" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getParametroComisionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:parametroComision" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="parametroComision">
+<xs:sequence>
+<xs:element name="mensaje" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="porcentaje" type="xs:double" minOccurs="0"></xs:element>
+<xs:element name="respuesta" type="tns:respuesta" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCliente">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="password" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idTipoDocumento" type="xs:short" minOccurs="0"></xs:element>
+<xs:element name="idDocumento" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getClienteResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:infoCliente" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

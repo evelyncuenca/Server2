@@ -1,0 +1,277 @@
+<?xml version="1.0" ?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://accounteracti.konecta.com.py/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="ServiceActivacion" targetNamespace="http://accounteracti.konecta.com.py/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://accounteracti.konecta.com.py/" elementFormDefault="unqualified" targetNamespace="http://accounteracti.konecta.com.py/" version="1.0">
+
+  <xs:element name="activarCliente" type="tns:activarCliente"></xs:element>
+
+  <xs:element name="activarClienteResponse" type="tns:activarClienteResponse"></xs:element>
+
+  <xs:element name="crearCuenta" type="tns:crearCuenta"></xs:element>
+
+  <xs:element name="crearCuentaResponse" type="tns:crearCuentaResponse"></xs:element>
+
+  <xs:element name="obtenerCodTipoRestriccion" type="tns:obtenerCodTipoRestriccion"></xs:element>
+
+  <xs:element name="obtenerCodTipoRestriccionResponse" type="tns:obtenerCodTipoRestriccionResponse"></xs:element>
+
+  <xs:element name="obtenerDatosCliente" type="tns:obtenerDatosCliente"></xs:element>
+
+  <xs:element name="obtenerDatosClienteResponse" type="tns:obtenerDatosClienteResponse"></xs:element>
+
+  <xs:element name="validarExisteCuenta" type="tns:validarExisteCuenta"></xs:element>
+
+  <xs:element name="validarExisteCuentaResponse" type="tns:validarExisteCuentaResponse"></xs:element>
+
+  <xs:complexType name="obtenerCodTipoRestriccion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idTipoRestriccion" type="xs:int"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="obtenerCodTipoRestriccionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseRestriccion"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="responseRestriccion">
+    <xs:complexContent>
+      <xs:extension base="tns:response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigoRestriccion" type="xs:int"></xs:element>
+          <xs:element minOccurs="0" name="formulario" type="xs:string"></xs:element>
+          <xs:element minOccurs="0" name="mensajeRestriccion" type="xs:string"></xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mensaje" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="status" type="xs:int"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="crearCuenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pojo" type="tns:pojo"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="pojo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="barrio" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="cedulaFrontal" type="xs:base64Binary"></xs:element>
+      <xs:element minOccurs="0" name="cedulaReversa" type="xs:base64Binary"></xs:element>
+      <xs:element minOccurs="0" name="ciudad" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="codigoPostal" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="departamento" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="direccion" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="email" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="estadoCivil" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="fechaNacimiento" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="fechaSwicth" type="xs:string"></xs:element>
+      <xs:element name="idCuenta" type="xs:long"></xs:element>
+      <xs:element name="idTipoUsuario" type="xs:int"></xs:element>
+      <xs:element name="idTransaccion" type="xs:long"></xs:element>
+      <xs:element minOccurs="0" name="numeroDocumento" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="numeroRuc" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="piso" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="primerApellido" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="primerNombre" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="segundoApellido" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="segundoNombre" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="sexo" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="telefonoFijo" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="telefonoMovil" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="ticket" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="crearCuentaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:response"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="obtenerDatosCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idCuentaPractigiros" type="xs:long"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="obtenerDatosClienteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseCliente"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="responseCliente">
+    <xs:complexContent>
+      <xs:extension base="tns:response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="apellido" type="xs:string"></xs:element>
+          <xs:element minOccurs="0" name="direccion" type="xs:string"></xs:element>
+          <xs:element minOccurs="0" name="documento" type="xs:string"></xs:element>
+          <xs:element minOccurs="0" name="nombre" type="xs:string"></xs:element>
+          <xs:element minOccurs="0" name="nroMovil" type="xs:string"></xs:element>
+          <xs:element minOccurs="0" name="sexo" type="xs:string"></xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="activarCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pojo" type="tns:pojo"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="activarClienteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:response"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="validarExisteCuenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="numeroMovil" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="usuarioPG" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="validarExisteCuentaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:response"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="crearCuenta">
+    <wsdl:part element="tns:crearCuenta" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obtenerDatosClienteResponse">
+    <wsdl:part element="tns:obtenerDatosClienteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="crearCuentaResponse">
+    <wsdl:part element="tns:crearCuentaResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="activarCliente">
+    <wsdl:part element="tns:activarCliente" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validarExisteCuenta">
+    <wsdl:part element="tns:validarExisteCuenta" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validarExisteCuentaResponse">
+    <wsdl:part element="tns:validarExisteCuentaResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obtenerCodTipoRestriccion">
+    <wsdl:part element="tns:obtenerCodTipoRestriccion" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obtenerCodTipoRestriccionResponse">
+    <wsdl:part element="tns:obtenerCodTipoRestriccionResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obtenerDatosCliente">
+    <wsdl:part element="tns:obtenerDatosCliente" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="activarClienteResponse">
+    <wsdl:part element="tns:activarClienteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ServiceActivacion">
+    <wsdl:operation name="obtenerCodTipoRestriccion">
+      <wsdl:input message="tns:obtenerCodTipoRestriccion" name="obtenerCodTipoRestriccion">
+    </wsdl:input>
+      <wsdl:output message="tns:obtenerCodTipoRestriccionResponse" name="obtenerCodTipoRestriccionResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crearCuenta">
+      <wsdl:input message="tns:crearCuenta" name="crearCuenta">
+    </wsdl:input>
+      <wsdl:output message="tns:crearCuentaResponse" name="crearCuentaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerDatosCliente">
+      <wsdl:input message="tns:obtenerDatosCliente" name="obtenerDatosCliente">
+    </wsdl:input>
+      <wsdl:output message="tns:obtenerDatosClienteResponse" name="obtenerDatosClienteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="activarCliente">
+      <wsdl:input message="tns:activarCliente" name="activarCliente">
+    </wsdl:input>
+      <wsdl:output message="tns:activarClienteResponse" name="activarClienteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarExisteCuenta">
+      <wsdl:input message="tns:validarExisteCuenta" name="validarExisteCuenta">
+    </wsdl:input>
+      <wsdl:output message="tns:validarExisteCuentaResponse" name="validarExisteCuentaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceActivacionSoapBinding" type="tns:ServiceActivacion">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"></soap:binding>
+    <wsdl:operation name="obtenerCodTipoRestriccion">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="obtenerCodTipoRestriccion">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="obtenerCodTipoRestriccionResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crearCuenta">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="crearCuenta">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="crearCuentaResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerDatosCliente">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="obtenerDatosCliente">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="obtenerDatosClienteResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="activarCliente">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="activarCliente">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="activarClienteResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarExisteCuenta">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="validarExisteCuenta">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="validarExisteCuentaResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceActivacion">
+    <wsdl:port binding="tns:ServiceActivacionSoapBinding" name="ServiceActivacionPort">
+      <soap:address location="http://192.168.10.245:8080/AccounterActi/ServiceActivacion"></soap:address>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

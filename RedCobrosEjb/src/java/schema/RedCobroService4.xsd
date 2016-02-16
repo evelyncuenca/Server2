@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-752-. -->
+<xs:schema xmlns:tns="http://practigiro.ws.documenta.com.py/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://practigiro.ws.documenta.com.py/">
+
+    <xs:complexType name="infoCliente">
+        <xs:sequence>
+            <xs:element name="apellidos" type="xs:string" minOccurs="0" />
+            <xs:element name="bloqueado" type="xs:string" minOccurs="0" />
+            <xs:element name="direccion" type="xs:string" minOccurs="0" />
+            <xs:element name="fechaEmisionDocumento" type="xs:dateTime" minOccurs="0" />
+            <xs:element name="fechaNacimiento" type="xs:dateTime" minOccurs="0" />
+            <xs:element name="id" type="tns:infoClienteId" minOccurs="0" />
+            <xs:element name="motivoBloqueo" type="xs:string" minOccurs="0" />
+            <xs:element name="nombres" type="xs:string" minOccurs="0" />
+            <xs:element name="profesion" type="xs:string" minOccurs="0" />
+            <xs:element name="respuesta" type="tns:respuesta" minOccurs="0" />
+            <xs:element name="telefono" type="xs:string" minOccurs="0" />
+            <xs:element name="tipoDocumento" type="tns:tipoDocumento" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="infoClienteId">
+        <xs:sequence>
+            <xs:element name="idDocumento" type="xs:string" minOccurs="0" />
+            <xs:element name="idTipoDocumento" type="xs:short" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="respuesta">
+        <xs:sequence>
+            <xs:element name="codigoRetorno" type="xs:int" minOccurs="0" />
+            <xs:element name="descripcion" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoDocumento">
+        <xs:sequence>
+            <xs:element name="descripcion" type="xs:string" minOccurs="0" />
+            <xs:element name="idTipoDocumento" type="xs:short" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="parametroComision">
+        <xs:sequence>
+            <xs:element name="comision" type="xs:string" minOccurs="0" />
+            <xs:element name="idTable" type="xs:string" minOccurs="0" />
+            <xs:element name="importe" type="xs:string" minOccurs="0" />
+            <xs:element name="porcentaje" type="xs:double" minOccurs="0" />
+            <xs:element name="respuesta" type="tns:respuesta" minOccurs="0" />
+            <xs:element name="tablaComisional" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ciudad">
+        <xs:sequence>
+            <xs:element name="descripcion" type="xs:string" minOccurs="0" />
+            <xs:element name="idCiudad" type="xs:int" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="datosTransaccion">
+        <xs:sequence>
+            <xs:element name="comision" type="xs:string" minOccurs="0" />
+            <xs:element name="datosTrx" type="xs:string" minOccurs="0" />
+            <xs:element name="mensajePromocional" type="xs:string" minOccurs="0" />
+            <xs:element name="montoBase" type="xs:string" minOccurs="0" />
+            <xs:element name="respuesta" type="tns:respuesta" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

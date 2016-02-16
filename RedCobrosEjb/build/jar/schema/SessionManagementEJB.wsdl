@@ -1,0 +1,196 @@
+<definitions name='SessionManagementService' targetNamespace='http://py.gov.set.services/rucas/' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://beans.rucas.set.gov.py/jaws' xmlns:ns2='http://error.beans.rucas.set.gov.py/jaws' xmlns:ns3='http://connect.beans.rucas.set.gov.py/jaws' xmlns:ns4='http://components.beans.rucas.set.gov.py/jaws' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://py.gov.set.services/rucas/' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema elementFormDefault='qualified' targetNamespace='http://connect.beans.rucas.set.gov.py/jaws' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns1='http://py.gov.set.services/rucas/' xmlns:ns2='http://beans.rucas.set.gov.py/jaws' xmlns:ns3='http://error.beans.rucas.set.gov.py/jaws' xmlns:ns5='http://components.beans.rucas.set.gov.py/jaws' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://connect.beans.rucas.set.gov.py/jaws' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://beans.rucas.set.gov.py/jaws'/>
+   <import namespace='http://py.gov.set.services/rucas/'/>
+   <import namespace='http://error.beans.rucas.set.gov.py/jaws'/>
+   <import namespace='http://components.beans.rucas.set.gov.py/jaws'/>
+   <complexType name='RUCAS'>
+    <sequence>
+     <element name='name' nillable='true' type='string'/>
+     <element name='uri' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault='qualified' targetNamespace='http://beans.rucas.set.gov.py/jaws' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns1='http://py.gov.set.services/rucas/' xmlns:ns3='http://error.beans.rucas.set.gov.py/jaws' xmlns:ns4='http://connect.beans.rucas.set.gov.py/jaws' xmlns:ns5='http://components.beans.rucas.set.gov.py/jaws' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://beans.rucas.set.gov.py/jaws' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://connect.beans.rucas.set.gov.py/jaws'/>
+   <import namespace='http://py.gov.set.services/rucas/'/>
+   <import namespace='http://error.beans.rucas.set.gov.py/jaws'/>
+   <import namespace='http://components.beans.rucas.set.gov.py/jaws'/>
+   <complexType name='Parameter'>
+    <sequence>
+     <element name='name' nillable='true' type='string'/>
+     <element name='value' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault='qualified' targetNamespace='http://py.gov.set.services/rucas/' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns2='http://beans.rucas.set.gov.py/jaws' xmlns:ns3='http://error.beans.rucas.set.gov.py/jaws' xmlns:ns4='http://connect.beans.rucas.set.gov.py/jaws' xmlns:ns5='http://components.beans.rucas.set.gov.py/jaws' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://py.gov.set.services/rucas/' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://connect.beans.rucas.set.gov.py/jaws'/>
+   <import namespace='http://beans.rucas.set.gov.py/jaws'/>
+   <import namespace='http://error.beans.rucas.set.gov.py/jaws'/>
+   <import namespace='http://components.beans.rucas.set.gov.py/jaws'/>
+   <complexType name='AppInfo'>
+    <sequence>
+     <element name='language' nillable='true' type='string'/>
+     <element name='name' nillable='true' type='string'/>
+     <element name='uuid' nillable='true' type='string'/>
+     <element name='version' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='ClientSystem'>
+    <sequence>
+     <element name='id' nillable='true' type='int'/>
+     <element name='name' nillable='true' type='string'/>
+     <element name='password' nillable='true' type='string'/>
+     <element name='userAlias' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='CryptMethod'>
+    <sequence>
+     <element name='code' nillable='true' type='string'/>
+     <element name='name' nillable='true' type='string'/>
+     <element name='version' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='LoginMethod'>
+    <sequence>
+     <element name='code' nillable='true' type='string'/>
+     <element name='name' nillable='true' type='string'/>
+     <element maxOccurs='unbounded' minOccurs='0' name='params' nillable='true' type='ns2:Parameter'/>
+     <element name='temporalSessionId' nillable='true' type='string'/>
+     <element name='version' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='RUCASConnectResponse'>
+    <sequence>
+     <element name='cryptMethod' nillable='true' type='tns:CryptMethod'/>
+     <element maxOccurs='unbounded' minOccurs='0' name='errors' nillable='true' type='ns3:RucasError'/>
+     <element name='loginMethod' nillable='true' type='tns:LoginMethod'/>
+     <element maxOccurs='unbounded' minOccurs='0' name='rucasList' nillable='true' type='ns4:RUCAS'/>
+     <element name='temporarySessionId' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='RUCASLoginResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='errors' nillable='true' type='ns3:RucasError'/>
+     <element name='permanentSessionId' nillable='true' type='string'/>
+     <element name='sessionInfo' nillable='true' type='ns5:SessionInfo'/>
+     <element name='success' nillable='true' type='boolean'/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault='qualified' targetNamespace='http://error.beans.rucas.set.gov.py/jaws' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns1='http://py.gov.set.services/rucas/' xmlns:ns2='http://beans.rucas.set.gov.py/jaws' xmlns:ns4='http://connect.beans.rucas.set.gov.py/jaws' xmlns:ns5='http://components.beans.rucas.set.gov.py/jaws' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://error.beans.rucas.set.gov.py/jaws' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://connect.beans.rucas.set.gov.py/jaws'/>
+   <import namespace='http://beans.rucas.set.gov.py/jaws'/>
+   <import namespace='http://py.gov.set.services/rucas/'/>
+   <import namespace='http://components.beans.rucas.set.gov.py/jaws'/>
+   <complexType name='RucasError'>
+    <sequence>
+     <element name='code' nillable='true' type='string'/>
+     <element name='description' nillable='true' type='string'/>
+     <element name='extendedCode' nillable='true' type='string'/>
+     <element name='family' nillable='true' type='string'/>
+     <element name='langKeyMessage' nillable='true' type='string'/>
+     <element name='langKeyTaggedMessage' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault='qualified' targetNamespace='http://components.beans.rucas.set.gov.py/jaws' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns1='http://py.gov.set.services/rucas/' xmlns:ns2='http://beans.rucas.set.gov.py/jaws' xmlns:ns3='http://error.beans.rucas.set.gov.py/jaws' xmlns:ns4='http://connect.beans.rucas.set.gov.py/jaws' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://components.beans.rucas.set.gov.py/jaws' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://connect.beans.rucas.set.gov.py/jaws'/>
+   <import namespace='http://beans.rucas.set.gov.py/jaws'/>
+   <import namespace='http://py.gov.set.services/rucas/'/>
+   <import namespace='http://error.beans.rucas.set.gov.py/jaws'/>
+   <complexType name='SessionInfo'>
+    <sequence>
+     <element name='expirationDate' nillable='true' type='dateTime'/>
+     <element name='maxIdleTimeoutInMillis' nillable='true' type='int'/>
+    </sequence>
+   </complexType>
+  </schema>
+ </types>
+ <message name='SessionManagement_getCurrentVersion'></message>
+ <message name='SessionManagement_getClientSystem'></message>
+ <message name='SessionManagement_RUCASConnect'>
+  <part name='appInfo' type='tns:AppInfo'/>
+  <part name='loginMethod' type='tns:LoginMethod'/>
+  <part name='cryptMethod' type='tns:CryptMethod'/>
+ </message>
+ <message name='SessionManagement_getClientSystemResponse'>
+  <part name='result' type='tns:ClientSystem'/>
+ </message>
+ <message name='SessionManagement_getCurrentVersionResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <message name='SessionManagement_RUCASLoginResponse'>
+  <part name='result' type='tns:RUCASLoginResponse'/>
+ </message>
+ <message name='SessionManagement_RUCASLogin'>
+  <part name='loginMethod' type='tns:LoginMethod'/>
+  <part name='cryptMethod' type='tns:CryptMethod'/>
+ </message>
+ <message name='SessionManagement_RUCASConnectResponse'>
+  <part name='result' type='tns:RUCASConnectResponse'/>
+ </message>
+ <portType name='SessionManagement'>
+  <operation name='RUCASConnect' parameterOrder='appInfo loginMethod cryptMethod'>
+   <input message='tns:SessionManagement_RUCASConnect'/>
+   <output message='tns:SessionManagement_RUCASConnectResponse'/>
+  </operation>
+  <operation name='RUCASLogin' parameterOrder='loginMethod cryptMethod'>
+   <input message='tns:SessionManagement_RUCASLogin'/>
+   <output message='tns:SessionManagement_RUCASLoginResponse'/>
+  </operation>
+  <operation name='getClientSystem'>
+   <input message='tns:SessionManagement_getClientSystem'/>
+   <output message='tns:SessionManagement_getClientSystemResponse'/>
+  </operation>
+  <operation name='getCurrentVersion'>
+   <input message='tns:SessionManagement_getCurrentVersion'/>
+   <output message='tns:SessionManagement_getCurrentVersionResponse'/>
+  </operation>
+ </portType>
+ <binding name='SessionManagementBinding' type='tns:SessionManagement'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='RUCASConnect'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://py.gov.set.services/rucas/' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://py.gov.set.services/rucas/' use='literal'/>
+   </output>
+  </operation>
+  <operation name='RUCASLogin'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://py.gov.set.services/rucas/' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://py.gov.set.services/rucas/' use='literal'/>
+   </output>
+  </operation>
+  <operation name='getClientSystem'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://py.gov.set.services/rucas/' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://py.gov.set.services/rucas/' use='literal'/>
+   </output>
+  </operation>
+  <operation name='getCurrentVersion'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://py.gov.set.services/rucas/' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://py.gov.set.services/rucas/' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='SessionManagementService'>
+  <port binding='tns:SessionManagementBinding' name='SessionManagementPort'>
+   <soap:address location='http://fi-c.set.gov.py:8080/rucas/SessionManagementEJB'/>
+  </port>
+ </service>
+</definitions>
